@@ -6,6 +6,7 @@ html,body {
 
 body {
     background-color: ghostwhite;
+    overflow: hidden;
 }
 
 .middle {
@@ -15,15 +16,13 @@ body {
     transform: translate(-50%, -50%);
 }
 
-#home {
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.divider {
+    margin-right: 24px;
+    background-color: transparent;
 }
 
+
+/* Design for Survey Page */
 #info-form {
     padding: 12px 48px 0 0;
 }
@@ -54,4 +53,31 @@ body {
 
 #question-form button[type="submit"] {
     margin-top: 15px;
+}
+
+#match .chart {
+    position:relative;
+    width: 15vw;
+    height: 15vw;
+}
+
+#match .chart canvas {
+    display: block;
+    position:absolute;
+    top:0;
+    left:0;
+}
+
+#match .chart span {
+    display:block;
+    text-align:center;
+    line-height: 16.5vw;
+    font-size:3.5vw;
+    margin-left:5px;
+    color: cyan;
+}
+
+#graph {
+    float: right;
+    margin-right: 15%;
 }
