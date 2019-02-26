@@ -8,7 +8,7 @@ module.exports = function(app) {
 
     // Storing data within friends
     app.post("/api/friends", function(req, res) {
+        res.json({status: 200, complete : true, data : friends});
         friends.push(req.body);
-        res.json({status: 200, complete : true});
     });
 };
