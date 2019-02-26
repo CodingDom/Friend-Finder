@@ -11,7 +11,7 @@ body {
 .middle {
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 50% !important;
     transform: translate(-50%, -50%);
 }
 
@@ -24,8 +24,16 @@ body {
     background-repeat: no-repeat;
 }
 
-#survey {
+#info-form {
+    padding: 12px 48px 0 0;
+}
+
+#form-container {
     min-height: 30vh;
+}
+
+#survey {
+    display: none;
 }
 
 #question {
@@ -33,13 +41,13 @@ body {
     border-bottom: 2px solid rgba(211, 211, 211, 0.5);
 }
 
-form {
+#question-form {
     position: absolute;
     width: 100%;
     bottom: 10%;
 }
 
-form .choice {
+#question-form .choice {
     display: inline-block;
     width: calc(20% - 12px);
 }

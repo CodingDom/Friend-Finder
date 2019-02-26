@@ -10,12 +10,32 @@
 </head>
 <body>
     <div class="row">
-        <div class="col s9 middle">
+        <div class="col s12 m10 middle">
             <div class="card white darken-1">
-            <div id="survey" class="card-content black-text">
+            <div id="form-container" class="card-content black-text">
+                <form id="info-form" action="#">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="John" id="first_name" type="text" class="validate" required>
+                                <label for="first_name">First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Doe" id="last_name" type="text" class="validate" required>
+                                <label for="last_name">Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s12">
+                                <input placeholder="https://images.google.com/johndoe.jpg" id="photo" type="text" class="validate" required>
+                                <label for="photo">Link to Photo Image</label>
+                            </div>
+                        </div>    
+                        <button class="btn waves-effect waves-light blue" type="submit" name="action">Start</button>
+                </form>
+                <div id="survey">
                 <h6 class="grey-text">Question 1 of 10:</h6>
                 <h5 id="question">How are you?</h5>
-                <form class="center" action="#">
+                <form id="question-form" class="center" action="#">
                     <div class="choice">
                         <label>
                         <input class="with-gap" name="group1" type="radio" checked />
@@ -51,7 +71,11 @@
                         </label>
                         <p>Strongly Agree</p>
                     </div>
+                    <button class="btn waves-effect waves-light blue right" type="submit" name="action">Submit
+                        <i class="material-icons right"></i>
+                    </button>
                 </form>
+                </div>
             </div>
             </div>
         </div>
