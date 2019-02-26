@@ -33,40 +33,43 @@
                         <button class="btn waves-effect waves-light blue" type="submit" name="action">Start</button>
                 </form>
                 <div id="survey">
+                <div class="progress">
+                    <div class="anim determinate" style="width:0"></div>
+                </div>
                 <h6 class="grey-text">Question <span id="current">1</span> of 10:</h6>
                 <h5 id="question">How are you?</h5>
                 <form id="question-form" action="#">
                     <div class="choice">
                         <label>
-                        <input class="with-gap" name="group1" type="radio" />
+                        <input class="with-gap" name="group1" type="radio" data-score="1" />
                         <span></span>
                         </label>
                         <p>Strongly Disagree</p>
                     </div>
                     <div class="choice">
                         <label>
-                        <input class="with-gap" name="group1" type="radio" />
+                        <input class="with-gap" name="group1" type="radio" data-score="2" />
                         <span></span>
                         </label>
                         <p>Disagree</p>
                     </div>
                     <div class="choice">
                         <label>
-                        <input class="with-gap" name="group1" type="radio"  checked/>
+                        <input class="with-gap" name="group1" type="radio" data-score="3"  checked/>
                         <span></span>
                         </label>
                         <p>Neutral</p>
                     </div>
                     <div class="choice">
                         <label>
-                        <input class="with-gap" name="group1" type="radio"  />
+                        <input class="with-gap" name="group1" type="radio" data-score="4"  />
                         <span></span>
                         </label>
                         <p>Agree</p>
                     </div>
                     <div class="choice">
                         <label>
-                        <input class="with-gap" name="group1" type="radio"  />
+                        <input class="with-gap" name="group1" type="radio" data-score="5"  />
                         <span></span>
                         </label>
                         <p>Strongly Agree</p>

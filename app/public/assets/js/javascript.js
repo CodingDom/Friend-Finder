@@ -1,15 +1,15 @@
 $(document).ready(function() {
     const questions = [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7",
-        "8",
-        "9",
-        "10"
+        "You tend to be constantly attached to your phone.",
+        "You would rather read a book than go out to an amusement park.",
+        "You rarely do something just out of sheer curiosity.",
+        "People easily upset you.",
+        "You only to stick with a small group of people.",
+        "It is often difficult for you to express your feelings.",
+        "You rarely get carried away by fantasies and ideas.",
+        "You consider yourself to be the life of the party.",
+        "Large crowds make you feel uneasy.",
+        "You feel more energetic after spending time with a group of people."
     ];
     const user = {
         name: "John Doe",
@@ -22,6 +22,7 @@ $(document).ready(function() {
     function updateQuestion() {
         $("#question").text(questions[currQuest]);
         $("#current").text(currQuest+1);
+        $("#survey .determinate").css("width",`${((currQuest+1)/questions.length)*100}%`);
     };
 
     $("#info-form").on("submit", function(e) {
@@ -46,15 +47,17 @@ $(document).ready(function() {
                 submission = true;
             };
         } else {
+            $(`#question-form button[type="submit"]`).attr("disabled",true);
+            $("#survey .progress .anim").removeClass("determinate");
+            $("#survey .progress .anim").addClass("indeterminate");
             $.ajax(
                 "/api/friends",
                 {
                     method: "POST",
                     data: user
                 })
-                .then(function(err, res) {
-                    if (err) throw err;
-                    console.log(res);
+                .then(function(res) {
+                    
                 });
         };
         e.preventDefault();
