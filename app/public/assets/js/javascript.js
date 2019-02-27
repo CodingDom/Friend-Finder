@@ -132,6 +132,7 @@ $(document).ready(function() {
                             totalDifference += Math.abs(user.scores[currIndex]-parseInt(score));
                             currIndex++;
                         });
+                        console.log(totalDifference, totalDifference < closestScore);
                         if (totalDifference < closestScore) {
                             closestScore = totalDifference;
                             matches = [person];
