@@ -129,6 +129,7 @@ $(document).ready(function() {
                         let totalDifference = 0;
                         person.scores.forEach(function(score) {
                             totalDifference += Math.abs(user.scores[currIndex]-parseInt(score));
+                            currIndex++;
                         });
                         if (totalDifference < closestScore) {
                             closestScore = totalDifference;
@@ -140,8 +141,10 @@ $(document).ready(function() {
                     $("#match .name").text(matches[0].name);
                     $("#match .pic").attr("src",matches[0].photo);
                     $("#match").modal("open");
-                    $("#graph").attr("data-value",Math.floor((50-closestScore)/50)*100);
-                    updateChart(Math.floor((50-closestScore)/50)*100);
+
+                    const dispScore = Math.floor(((50-closestScore)/50)*100);
+                    $("#graph").attr("data-value",dispScore);
+                    updateChart(dispScore);
                 });
         };
         e.preventDefault();
