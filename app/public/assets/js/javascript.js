@@ -79,8 +79,11 @@ $(document).ready(function() {
         user.photo = $("#photo").val();
 
         function validatePhoto() {
+            $(`#info-form[type="submit"]`).attr("disabled",true);
+            $("#image-validator").off("load error");
             $("#image-validator").on("load error", function(res) {
                 if (res.type == "error") { 
+                    $("#photo").removeClass("valid");
                     $("#photo").addClass("invalid");
                     return alert("Invalid photo..");
                 };    
@@ -95,6 +98,7 @@ $(document).ready(function() {
             $("#image-validator").attr("src",user.photo);
         };
         validatePhoto();
+        $(`#info-form[type="submit"]`).attr("disabled",false);
         e.preventDefault();
     });
 
