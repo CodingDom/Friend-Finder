@@ -129,7 +129,8 @@ $(document).ready(function() {
                         let currIndex = 0;
                         let totalDifference = 0;
                         person.scores.forEach(function(score) {
-                            totalDifference += Math.abs(user.scores[currIndex]-parseInt(score));
+                            console.log(user.scores[currIndex],score);
+                            totalDifference += Math.abs(parseInt(user.scores[currIndex])-parseInt(score));
                             currIndex++;
                         });
                         console.log(totalDifference, totalDifference < closestScore);
