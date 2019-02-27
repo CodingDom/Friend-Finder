@@ -12,4 +12,11 @@ module.exports = function(app) {
         friends.push(req.body);
         console.log(req.body);
     });
+
+    app.post("/api/clear", function(req, res) {
+        for (let i = friends.length; i > 0; i--) {
+            friends[i] = null;
+        };
+        res.json({status: 200, complete : true, data : friends});
+    });
 };
