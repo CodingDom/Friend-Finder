@@ -124,6 +124,7 @@ $(document).ready(function() {
                 .then(function(res) {
                     let closestScore = Infinity;
                     let matches = [];
+                    console.log(res);
                     res.data.forEach(function(person) {
                         let currIndex = 0;
                         let totalDifference = 0;
