@@ -77,12 +77,24 @@ $(document).ready(function() {
     $("#info-form").on("submit", function(e) {
         user.name = $("#first_name").val() + " " + $("#last_name").val();
         user.photo = $("#photo").val();
-        // Reset all input
-        $(this).css("display","none");
-        $(this).find("input").val("");
-        // Start questionaire
-        updateQuestion();
-        $("#survey").css("display","block");
+
+        function validatePhoto() {
+            $("#image-validator").on("load error", function(res) {
+                if (res.type == "error") { 
+                    $("#photo").addClass("invalid");
+                    return alert("Invalid photo..");
+                };    
+                $("#photo").removeClass("invalid");
+                // Reset all input
+                $("#info-form").css("display","none");
+                $("#info-form").find("input").val("");
+                // Start questionaire
+                updateQuestion();
+                $("#survey").css("display","block");
+            });
+            $("#image-validator").attr("src",user.photo);
+        };
+        validatePhoto();
         e.preventDefault();
     });
 
@@ -112,7 +124,7 @@ $(document).ready(function() {
                         let currIndex = 0;
                         let totalDifference = 0;
                         person.scores.forEach(function(score) {
-                            totalDifference += Math.abs(user.scores[currIndex]-score);
+                            totalDifference += Math.abs(user.scores[currIndex]-parseInt(score));
                         });
                         if (totalDifference < closestScore) {
                             closestScore = totalDifference;
