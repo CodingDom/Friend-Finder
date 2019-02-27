@@ -138,6 +138,7 @@ $(document).ready(function() {
                             matches.push(person);
                         };
                     });
+                    console.log(matches);
                     $("#match .name").text(matches[0].name);
                     $("#match .pic").attr("src",matches[0].photo);
                     $("#match").modal("open");
