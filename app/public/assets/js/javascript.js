@@ -112,6 +112,7 @@ $(document).ready(function() {
                 submission = true;
             };
         } else {
+            user.scores.push(parseInt($(this).find("input:checked").attr("data-score")));
             $(`#question-form button[type="submit"]`).attr("disabled",true);
             $("#survey .progress .anim").removeClass("determinate");
             $("#survey .progress .anim").addClass("indeterminate");
@@ -129,11 +130,9 @@ $(document).ready(function() {
                         let currIndex = 0;
                         let totalDifference = 0;
                         person.scores.forEach(function(score) {
-                            console.log(user.scores[currIndex],score);
-                            totalDifference += Math.abs(parseInt(user.scores[currIndex])-parseInt(score));
+                            totalDifference += Math.abs(user.scores[currIndex]-parseInt(score));
                             currIndex++;
                         });
-                        console.log(totalDifference, totalDifference < closestScore);
                         if (totalDifference < closestScore) {
                             closestScore = totalDifference;
                             matches = [person];
