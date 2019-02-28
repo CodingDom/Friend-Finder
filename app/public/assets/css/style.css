@@ -58,7 +58,6 @@ body {
 #match .chart {
     position:relative;
     width: 15vw;
-    height: 15vw;
 }
 
 #match .chart canvas {
@@ -80,6 +79,15 @@ body {
 #graph {
     float: right;
     margin-right: 15%;
+}
+
+#match-text {
+    position: absolute;
+    width: 100%;
+    bottom: 100%;
+    left: 0;
+    margin-bottom: 0.912rem;
+    text-align: center;
 }
 
 #exit {

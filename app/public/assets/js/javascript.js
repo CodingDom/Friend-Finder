@@ -102,6 +102,8 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+
+    
     $("#question-form").on("submit", function(e) {
         if (!submission) {
             user.scores.push(parseInt($(this).find("input:checked").attr("data-score")));
