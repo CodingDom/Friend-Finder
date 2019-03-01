@@ -1,4 +1,5 @@
 const friends = require("../data/friends.js");
+const originalLength = friends.length;
 
 module.exports = function(app) {
     // Sends list of all stored friends
@@ -14,9 +15,7 @@ module.exports = function(app) {
     });
 
     app.post("/api/clear", function(req, res) {
-        for (let i = friends.length; i > 0; i--) {
-            friends[i] = null;
-        };
+        friends.length = originalLength;
         res.json({status: 200, complete : true, data : friends});
     });
 };
