@@ -1,7 +1,7 @@
 # Friend Finder
 
 <i><b>Friend Finder</b></i> is a friend matchingmaking web application. After taking a brief survey the user is prompted with their most compatible friend along with how closely matched the two are.<br>
-<b>Link:</b> <a>https://pure-meadow-10783.herokuapp.com</a>
+<b>Link:</b> <a>https://dom-friend-finder.herokuapp.com</a>
 
 ## Preview
 
