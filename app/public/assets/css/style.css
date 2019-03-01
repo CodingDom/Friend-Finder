@@ -55,6 +55,10 @@ body {
     margin-top: 15px;
 }
 
+#match {
+    max-height: 80%;
+}
+
 #match .chart {
     position:relative;
     width: 15vw;
